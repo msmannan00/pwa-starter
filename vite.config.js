@@ -12,7 +12,7 @@ export default defineConfig({
         "name": "Three of Cups",
         "short_name": "3OC",
         "start_url": "/",
-        "display": "fullscreen",
+        "display": "standalone",
         "background_color": "#ffffff",
         "lang": "en",
         "scope": "/",
@@ -53,7 +53,13 @@ export default defineConfig({
         "orientation": "portrait",
         "categories": [
           "social"
-        ]
+        ],
+        "display_override": [
+          "standalone",
+          "window-controls-overlay"
+        ],
+        "iarc_rating_id": "18",
+        "prefer_related_applications": false
       }
     })
   ]
