@@ -1,0 +1,30 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  background-color: #1E1E3F;
+  color: white;
+  margin: 0 auto;
+  max-width: 20em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+h3 {
+  margin: 0.5em 0;
+}
+
+.accordion-button {
+  background-color: inherit !important;
+  color: white;
+}
