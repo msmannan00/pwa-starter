@@ -6,7 +6,6 @@
       "declaration": true,
       "emitDeclarationOnly": true,
       "skipLibCheck": true,
-      "outDir": "./types",
       "strict": true,
       "noUnusedLocals": true,
       "noUnusedParameters": true,
