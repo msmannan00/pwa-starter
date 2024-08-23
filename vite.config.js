@@ -18,6 +18,15 @@ export default defineConfig({
         "scope": "/",
         "description": "3oC intends to become a global digital network and ecosystem fueled by our core values. A global digital trust system for people to use before they meet in person with someone they have met online. The more types of users and types of reasons, the better the ecosystem will work for everyone.",
         "theme_color": "#ffffff",
+
+
+        "related_applications": [],
+        "prefer_related_applications": false,
+        "display_override": ["window-controls-overlay"],
+        "launch_handler": {
+          "client_mode": "focus-existing"
+        },
+
         "icons": [
           {
             "src": "/assets/icons/192x192.png",
@@ -48,19 +57,30 @@ export default defineConfig({
             "purpose": "any"
           }
         ],
+
+        "features": [
+          "Cross Platform",
+          "fast",
+          "simple"
+        ],
+
         "id": "com.app.threeofcup",
         "dir": "ltr",
         "orientation": "portrait",
         "categories": [
           "social"
         ],
-        "display_override": [
-          "standalone",
-          "window-controls-overlay"
-        ],
         "iarc_rating_id": "18",
-        "prefer_related_applications": false
-      }
+      },
+        "shortcuts": [
+          {
+            "name": "Open About",
+            "short_name": "About",
+            "description": "Open the about page",
+            "url": "/about",
+            "icons": [{ "src": "assets/icons/192x192.png", "sizes": "192x192" }]
+          }
+        ],
     })
   ]
 });
