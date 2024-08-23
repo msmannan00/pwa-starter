@@ -53,16 +53,7 @@ export default defineConfig({
         "orientation": "portrait",
         "categories": [
           "social"
-        ],
-        "share_target": {
-          "method": "GET",
-          "action": "https://twitter.com/3oC_world",
-          "params": {
-            "title": "Three of Cups",
-            "url": "https://twitter.com/3oC_world",
-            "text": "Three of Cups"
-          }
-        }
+        ]
       }
     })
   ]
