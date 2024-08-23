@@ -1,6 +1,6 @@
 {
-  "name": "Vercel",
-  "short_name": "Vercel",
+  "name": "Vercelmmm",
+  "short_name": "Vercelmmm",
   "icons": [
     {
       "src": "https://assets.vercel.com/image/upload/v1573246280/front/favicon/vercel/android-chrome-192x192.png",
@@ -15,6 +15,5 @@
   ],
   "theme_color": "#000000",
   "background_color": "#000000",
-  "display": "standalone",
-  "start_url": "/join3oc"
+  "display": "standalone"
 }
