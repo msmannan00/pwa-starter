@@ -49,12 +49,14 @@ export default function ConnectionProfile(props) {
               <FaUserMinus className="mr-1" />
               Remove Bud
             </Dropdown.Item>
-            {props?.connection?.is_verified && verified && (
-              <Dropdown.Item onClick={scheduleIRL}>
+            {
+              // (TEMPORARILY DISABLED) Checks that both users are verified before allowing to schedule IRL
+              // props?.connection?.is_verified && verified &&
+              (<Dropdown.Item onClick={scheduleIRL}>
                 <FaCalendarAlt className="mr-1" />
                 Schedule IRL
-              </Dropdown.Item>
-            )}
+              </Dropdown.Item>)
+            }
           </DropdownButton>
         </div>
       </div>

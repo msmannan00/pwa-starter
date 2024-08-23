@@ -29,6 +29,8 @@ export {
   withdrawParticipant,
   getScheduleIRLs,
   getScheduleIRL,
+  startIRL,
+  endIRL,
   cancelIRL,
 } from "./IRL";
 export { getUTC, getLocalTC, getLocalTimeInISO } from "./TimeConversion";

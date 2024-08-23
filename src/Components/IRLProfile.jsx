@@ -1,17 +1,21 @@
 import PropTypes from "prop-types";
 import { UserProfileBadge, Button } from ".";
-import { getUserId, getLocalTC, cancelIRL, withdrawParticipant } from "../Lib";
+import { getUserId, getLocalTC, startIRL, endIRL, cancelIRL, withdrawParticipant } from "../Lib";
 import { Accordion, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { FaEdit, FaTrashAlt, FaArrowLeft } from "react-icons/fa";
 
 export default function IRLProfile(props) {
+  console.log(props?.irl?.time_from);
+  console.log(props.irl)
   const [date, timeFrom] = getLocalTC(props?.irl?.time_from);
+  const [irlHasStarted, setIrlHasStarted] = useState(props?.irl?.irl_status === "in progress");
+  const [irlHasEnded, setIrlHasEnded] = useState(props?.irl?.irl_status === "completed");
   const [, timeTo] = getLocalTC(props?.irl?.time_to);
   const [, notificationTime] = getLocalTC(props?.irl?.notification_time);
-  console.log(props?.irl?.notification_time);
   const [position, setPosition] = useState();
+  const [isOrganizer, setIsOrganizer] = useState(false);
   const navigate = useNavigate();
   const positions = ["Organizer", "Participant", "Backup Bud"];
 
@@ -21,6 +25,18 @@ export default function IRLProfile(props) {
 
   const isEmergencyPOC = (id) =>
     props.irl.contacts?.some((item) => item.id === Number(id));
+
+  const _startIrl = async () => {
+    const response = await startIRL(props.irl.irl_id)
+    console.log("Has it started", irlHasStarted)
+    setIrlHasStarted(response.success)
+    console.log(response, irlHasStarted)
+  }
+
+  const _endIrl = async () => {
+    const response = await endIRL(props.irl.irl_id)
+    setIrlHasEnded(response.success);
+  }
 
   const _updateIRL = () => {
     navigate(`/updateirl/${props.irl.irl_id}`);
@@ -48,6 +64,7 @@ export default function IRLProfile(props) {
     getUserId()
       .then((id) => {
         if (id === props?.irl?.organizer?.id) {
+          setIsOrganizer(true);
           setPosition(positions[0]);
         } else if (isParticipant(id)) {
           setPosition(positions[1]);
@@ -158,6 +175,18 @@ export default function IRLProfile(props) {
               </>
             )}
         </div>
+        {isOrganizer && !irlHasStarted && (<Button
+          onClick={_startIrl}
+          className="bg-red-600 text-white py-1 px-3 rounded text-xs"
+        >
+          Start Irl
+        </Button>)}
+        {isOrganizer && irlHasStarted && !irlHasEnded && (<Button
+          onClick={_endIrl}
+          className="bg-red-600 text-white py-1 px-3 rounded text-xs"
+        >
+          End Irl
+        </Button>)}
       </Accordion.Body>
     </Accordion>
   );
@@ -167,6 +196,7 @@ IRLProfile.propTypes = {
   irl: PropTypes.shape({
     time_from: PropTypes.string,
     time_to: PropTypes.string,
+    irl_status: PropTypes.string,
     label: PropTypes.string,
     place: PropTypes.string,
     organizer: PropTypes.object,

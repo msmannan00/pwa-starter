@@ -47,14 +47,6 @@ export default function Verify() {
   // State for managing the Snackbar visibility.
   const [open, setOpen] = useState(true);
 
-  // Automatically close the Snackbar after 5 seconds.
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setOpen(false);
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, []);
-
   const handleDocumentUpload = (event) => {
     setDocument(event.target.files[0]);
   };
@@ -96,7 +88,7 @@ export default function Verify() {
         <input type="file" className="my-4" onChange={handleDocumentUpload} />
         <Button onClick={_verifyUser}>Verify Me</Button>
 
-        <Snackbar open={open} autoHideDuration={5000} anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}>
+        <Snackbar open={open} anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}>
           <StyledAlert onClose={() => setOpen(false)} severity="info">
             Instructions for iPhone users:
             <StyledList>

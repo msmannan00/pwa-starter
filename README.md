@@ -1,35 +1,37 @@
-# PWA Starter
+# Three of Cups
 
-[**Straight to Full Documentation**](https://docs.pwabuilder.com/#/starter/quick-start)
+## Description
 
-The PWABuilder pwa-starter is our opinionated, best practices, production tested starter that we use to build all of our PWAs, including [PWABuilder itself](https://blog.pwabuilder.com/posts/introducing-the-brand-new-pwa-builder/)! The pwa-starter is a starter codebase, just like create-react-app or the Angular CLI can generate, that uses the PWABuilder team&#39;s preferred front-end tech stack. We also have a CLI tool to allow you to create a PWA template from the command line.
+This is the official repository of the web application of three of cups. The purpose of this application is to solve the issue of identity validation before scheduling to meet a person IRL.
 
-## Jump Right In
+## Tech Stack
 
-Install the PWABuilder CLI:
+### Frontend
 
-`npm i -g @pwabuilder/cli`
+<img src="https://skillicons.dev/icons?i=react,vite,tailwindcss,materialui" />
 
-And create a new app with this command:
+### Backend
 
-`pwa create`
+<img src="https://skillicons.dev/icons?i=python,flask,docker,postman" />
 
-And start your app locally with:
+### Database
 
-`pwa start`
+<img src="https://skillicons.dev/icons?i=redis,postgres" />
 
-And that's it! Good luck on your Progressive Web App adventure!
+## How it looks?
 
-## More Info
+- <a href="https://www.figma.com/file/0nZApsFQttDHvbuESkGLX0/UI-_Beta_V1?type=design&node-id=7-677&mode=design&t=QNwXOPxvVWuq8CsA-0">Figma Design</a>
+- <a href="https://3oc.vercel.app/">Webapp</a>
 
-[![Get started with the pwa-starter!](https://img.youtube.com/vi/u3pWKpmic_k/0.jpg)](https://www.youtube.com/watch?v=u3pWKpmic_k)
+## Features
 
-With it you get an app that:
-- Has no build system to set up and no boilerplate code to add. Everything is included out of the box.
-- Has a Service Worker system using [Workbox](https://developers.google.com/web/tools/workbox/)
-- Scores close to 100 on Lighthouse out of the box
-- Has everything needed to be installable in the browser
-- Is ready to be package for the app stores using [PWABuilder](https://www.pwabuilder.com)
-- Uses the [Azure Static Web Apps CLI](https://azure.github.io/static-web-apps-cli) which enables emulating your production environment locally, and gets you ready for deploying to Azure Static Web Apps!
+- **Authentication**: Users can register and/or authenticate themselves using their credentials.
+- **Google Authetication**: Users can register and/or authenticate themselves using their existing google account.
+- **Referral**: Users can have their own referral link and share it with anyone to add the person as a connection.
+- **Identity Validation**: Users can validate/verify themselves by uploading their documents.
+- **Scheduling IRL**: Users can schedule IRLs with their connections.
 
-and all with just a few button clicks 😊.
+## Author
+
+<a href="https://github.com/busycaesar">Dev Shah</a>                                                                                                                                                               
+<a href="https://github.com/Kabir-Narula">Kabir Narula</a>

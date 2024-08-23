@@ -1,7 +1,6 @@
 import { getToken } from "./jwt";
 import { getUserId } from "./UserProfile";
 
-
 const scheduleIRL = async (IRLdata) => {
   const token = getToken();
   const id = await getUserId();
@@ -79,6 +78,58 @@ const withdrawParticipant = async (irlId) => {
   );
 
   const data = await response.json();
+
+  if (response.ok) {
+    return { success: true, message: data.message };
+  } else {
+    return { success: false, message: data.message };
+  }
+};
+
+const startIRL = async (irlId) => {
+  const token = getToken();
+
+  // Make a PUT request to the backend
+  const response = await fetch(
+    `${import.meta.env.VITE_API_URL}/users/startIRL/${irlId}`,
+    {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "ngrok-skip-browser-warning": `${import.meta.env.VITE_ISDEVELOPMENT}`,
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+
+  const data = await response.json();
+  console.log(data);
+
+  if (response.ok) {
+    return { success: true, message: data.message };
+  } else {
+    return { success: false, message: data.message };
+  }
+};
+
+const endIRL = async (irlId) => {
+  const token = getToken();
+
+  // Make a PUT request to the backend
+  const response = await fetch(
+    `${import.meta.env.VITE_API_URL}/users/endIRL/${irlId}`,
+    {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "ngrok-skip-browser-warning": `${import.meta.env.VITE_ISDEVELOPMENT}`,
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+
+  const data = await response.json();
+  console.log(data);
 
   if (response.ok) {
     return { success: true, message: data.message };
@@ -169,5 +220,7 @@ export {
   withdrawParticipant,
   getScheduleIRLs,
   getScheduleIRL,
+  startIRL,
+  endIRL,
   cancelIRL,
 };
