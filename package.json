@@ -23,6 +23,7 @@
     "workbox-core": "^7.0.0",
     "workbox-precaching": "^7.0.0"
   },
+  
   "devDependencies": {
     "typescript": "^5.4.4",
     "vite": "^5.2.8",
