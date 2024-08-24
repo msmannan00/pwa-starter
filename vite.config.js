@@ -12,7 +12,7 @@ export default defineConfig({
         "name": "Three of Cups",
         "short_name": "3OC",
         "start_url": "/",
-        "display": "standalone",
+        "display": "fullscreen",
         "background_color": "#ffffff",
         "lang": "en",
         "scope": "/",
