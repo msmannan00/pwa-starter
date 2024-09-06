@@ -43,44 +43,8 @@ export default defineConfig({
             "sizes": "192x192",
             "type": "image/png",
             "purpose": "maskable"
-          },
-          {
-            "src": "/assets/icons/512x512-maskable.png",
-            "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "maskable"
-          },
-          {
-            "src": "/assets/icons/512x512.png",
-            "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "any"
           }
-        ],
-
-        "features": [
-          "Cross Platform",
-          "fast",
-          "simple"
-        ],
-
-        "id": "com.app.threeofcup",
-        "dir": "ltr",
-        "orientation": "portrait",
-        "categories": [
-          "social"
-        ],
-        "iarc_rating_id": "18",
-      },
-        "shortcuts": [
-          {
-            "name": "Open About",
-            "short_name": "About",
-            "description": "Open the about page",
-            "url": "/about",
-            "icons": [{ "src": "assets/icons/192x192.png", "sizes": "192x192" }]
-          }
-        ],
+        },
     })
   ]
 });
