@@ -21,20 +21,7 @@ export default defineConfig({
         "id": "com.app.threeofcup",
         "dir": "ltr",
         "orientation": "portrait",
-        "categories": [
-          "social"
-        ],
-        "iarc_rating_id": "18",
-      },
-        "shortcuts": [
-          {
-            "name": "Open About",
-            "short_name": "About",
-            "description": "Open the about page",
-            "url": "/about",
-            "icons": [{ "src": "assets/icons/192x192.png", "sizes": "192x192" }]
-          }
-        ],
+      }
     })
   ]
 });
